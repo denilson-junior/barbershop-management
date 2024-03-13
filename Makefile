@@ -1,4 +1,4 @@
-DJANGO=py manage.py
+DJANGO=python manage.py
 
 run:
 	$(DJANGO) runserver
@@ -8,6 +8,9 @@ make:
 
 migrate:
 	$(DJANGO) migrate
+
+test:
+	$(DJANGO) test
 
 fmt:
 	black .
