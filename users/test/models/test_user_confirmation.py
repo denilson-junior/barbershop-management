@@ -22,7 +22,3 @@ class UserModelTestCase(TestCase):
             user_confirmation.__str__(),
             f"{user_confirmation.id} - {user_confirmation.code} - {user_confirmation.user.full_name}",
         )
-
-
-git config --global user.email "denilsonsouzagomesjunior@gmail.com"
-git config --global user.name "Denilson"
