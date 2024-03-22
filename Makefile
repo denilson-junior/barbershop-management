@@ -12,11 +12,14 @@ migrate:
 test:
 	$(DJANGO) test
 
+shell:
+	$(DJANGO) shell
+
 fmt:
 	black .
 
 db.up:
-	docker-compose up -d
+	sudo docker-compose up -d
 
 db.down:
-	docker stop barbershop-management-db
+	sudo docker stop barbershop-management-db
