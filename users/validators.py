@@ -19,16 +19,16 @@ def validator_email(email: str):
 
 
 def validator_password(password: str):
-    if not re.search(r'[A-Z]', password):
+    if not re.search(r"[A-Z]", password):
         raise ValidationError("A senha precisa ter pelo menos uma letra maiúscula.")
-    
-    if not re.search(r'[a-z]', password):
+
+    if not re.search(r"[a-z]", password):
         raise ValidationError("A senha precisa ter pelo menos uma letra minúscula.")
 
-    if not re.search(r'\d', password):
+    if not re.search(r"\d", password):
         raise ValidationError("A senha deve ter pelo menos um número.")
 
-    if not re.search(r'[!@#$%^&*(),.?:{}|<>]', password):
+    if not re.search(r"[!@#$%^&*(),.?:{}|<>]", password):
         raise ValidationError("A senha deve ter pelo menos um caracter especial.")
 
     if len(password) < 8:
