@@ -24,7 +24,7 @@ class UserServiceTestCase(TestCase):
         self.assertTrue(User.objects.filter(email=payload.get("email")).exists())
 
     def test_create_user_exception_already_user(self):
-        User.objects.create(username='teste123', email='test@gmail.com')
+        User.objects.create(username="teste123", email="test@gmail.com")
 
         payload = {
             "username": "teste123",
@@ -36,4 +36,7 @@ class UserServiceTestCase(TestCase):
         with self.assertRaises(exceptions.APIException) as ctx:
             self.service.create_user(payload)
 
-        self.assertEqual(ctx.exception.detail.title(), 'Já Existe Um Usuário Com Esse Username/Email.')
+        self.assertEqual(
+            ctx.exception.detail.title(),
+            "Já Existe Um Usuário Com Esse Username/Email.",
+        )
